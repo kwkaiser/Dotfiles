@@ -1,13 +1,13 @@
 [colors]
-background = ${xrdb:color8:#192255}
-foreground = ${xrdb:color15:#ffdfff}
-active = #6848cb
-inactive = #48328c
-highlight = ${xrdb:color2:#9B60D0}
-error = ${xrdb:color9:#c543b3}
+background = ${xrdb:color8:#0c2b42}
+foreground = ${xrdb:color15:#f7f4ff}
+active = #308fa7
+inactive = #216272
+highlight = ${xrdb:color2:#7B8294}
+error = ${xrdb:color9:#f384a3}
 
 [bar/wpgtk]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:DisplayPort-1}
 width = 100%
 height = 24
 offset-y = 0%

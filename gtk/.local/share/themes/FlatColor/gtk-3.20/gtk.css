@@ -1,25 +1,24 @@
-
 /* Default color scheme */
-@define-color color0 #2a232a;
-@define-color color1 #BFC2B5;
-@define-color color2 #9AA6A8;
-@define-color color3 #BBC5C5;
-@define-color color4 #75D88A;
-@define-color color5 #6f959c;
-@define-color color6 #ABB6B6;
-@define-color color7 #d3efdb;
-@define-color color8 #3d333d;
-@define-color color9 #fefecd;
-@define-color color10 #b4e8f1;
-@define-color color11 #d3fefe;
-@define-color color12 #82fea6;
-@define-color color13 #86d9e8;
-@define-color color14 #c4fefe;
-@define-color color15 #eafef3;
-@define-color selected_bg_color #87afaf;
-@define-color bg_color @color8;
-@define-color tooltip_bg_color shade(@color0, 1.20);
-@define-color base_color mix(@color8, @color0, 1.2);
+@define-color color0 #051018;
+@define-color color1 #AD7484;
+@define-color color2 #7B8294;
+@define-color color3 #867A8C;
+@define-color color4 #6A7789;
+@define-color color5 #E07983;
+@define-color color6 #398497;
+@define-color color7 #bcbac2;
+@define-color color8 #0c2b42;
+@define-color color9 #f384a3;
+@define-color color10 #8ea1d1;
+@define-color color11 #b38dc6;
+@define-color color12 #7a98c1;
+@define-color color13 #ff8698;
+@define-color color14 #3cb3d1;
+@define-color color15 #f7f4ff;
+@define-color selected_bg_color #308fa7;
+@define-color bg_color mix(@color0, @color15, 0.12);
+@define-color tooltip_bg_color mix(@color0, @color15, 0.04);
+@define-color base_color mix(@color0, @color15, 0);
 @define-color fg_color @color15;
 @define-color text_color @color15;
 @define-color selected_fg_color @color15;
@@ -96,6 +95,7 @@
 @import url("widgets/scrollbar.css");
 @import url("widgets/separator.css");
 @import url("widgets/sidebar.css");
+@import url("widgets/chrome.css");
 @import url("widgets/spinbutton.css");
 @import url("widgets/spinner.css");
 @import url("widgets/switch.css");
@@ -106,4 +106,3 @@
 @import url("widgets/csd.css");
 @import url("widgets/combobox.css");
 @import url("widgets/selection-mode.css");
-@import url("widgets/chrome.css");

@@ -7,7 +7,7 @@ highlight = ${{xrdb:color2:{color2}}}
 error = ${{xrdb:color9:{color9}}}
 
 [bar/wpgtk]
-monitor = ${{env:MONITOR:eDP-1}}
+monitor = ${{env:MONITOR:DisplayPort-1}}
 width = 100%
 height = 24
 offset-y = 0%
