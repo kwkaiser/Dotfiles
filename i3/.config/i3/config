@@ -21,6 +21,9 @@ client.placeholder      #000000   #0c0c0c   $white  #000000 #0c0c0c
 
 client.background       #ffffff
 
+smart_gaps on
+smart_borders on
+
 ### STARTUP ###
 
 # Set lock
@@ -155,8 +158,4 @@ mode "monitor" {
 bindsym $mod+r mode "resize"
 bindsym $mod+a mode "monitor"
 
-exec --no-startup-id "setxkbmap -option caps:escape"
-exec --no-startup-id exec volumeicon
-exec --no-startup-id exec compton
-exec --no-startup-id ~/.wallpapers/wp_init.sh 
 exec_always --no-startup-id exec ~/Code/scripts/polybar.sh &
