@@ -1,3 +1,3 @@
 # dotfiles:
 
-The dotfiles for my laptop (little d).
+The dotfiles for my computers.
