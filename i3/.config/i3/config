@@ -14,7 +14,7 @@ new_window pixel 3
 
 # class                 border    backgr.   text    indicator child_border
 client.focused          $coloract $coloract $white  $split $coloract
-client.focused_inactive $coloract $coloract $white  $split $coloract
+client.focused_inactive $coloract $coloract $white  $split $colorin
 client.unfocused        $colorin  $colorin  #888888 $split $colorin
 client.urgent           #2f343a   #900000   $white  #900000 #900000
 client.placeholder      #000000   #0c0c0c   $white  #000000 #0c0c0c
@@ -29,6 +29,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # Launch nm-applet
 exec --no-startup-id nm-applet
 
+exec --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -39,7 +41,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Launch dmenu_set
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
 
 # change focus
 bindsym $mod+j focus left
@@ -66,10 +68,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split v
+bindsym $mod+v split v
 
 # split in vertical orientation
-bindsym $mod+v split h
+bindsym $mod+h split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
