@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/kwkaiser/.config/wpg/wallpapers/whiteblackorange.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#000000",
+        "foreground": "#fff1e8",
+        "cursor": "#fff1e8"
+    },
+    "colors": {
+        "color0": "#000000",
+        "color1": "#ff004d",
+        "color2": "#00e756",
+        "color3": "#fff024",
+        "color4": "#83769c",
+        "color5": "#ff77a8",
+        "color6": "#29adff",
+        "color7": "#5f574f",
+        "color8": "#008751",
+        "color9": "#ff004d",
+        "color10": "#00e756",
+        "color11": "#fff024",
+        "color12": "#83769c",
+        "color13": "#ff77a8",
+        "color14": "#29adff",
+        "color15": "#fff1e8"
+    }
+}

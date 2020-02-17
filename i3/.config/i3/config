@@ -2,24 +2,29 @@ set $mod Mod1
 
 ### STYLING/STARTUP STUFF ### 
 
-set $coloract "#6a8e7a"
-set $colorin "#3c5045"
-set_from_resource $white i3wm.color15 "#fefbec"
-set_from_resource $split i3wm.color10 "#9E664B0"
+set $coloract "{active}"
+set $colorin "{inactive}"
+set $terminal urxvtc
+set_from_resource $color15 i3wm.color15 "{color15}"
+set_from_resource $split i3wm.color10 "{color10}"
+set_from_resource $coloru i3wm.color2 "{color2}"
+set_from_resource $color0 i3wm.color0 "{color0}"
+set_from_resource $color8 i3wm.color8 "{color8}"
 font pango:monospace 8
 
 gaps outer 0
 gaps inner 8
 new_window pixel 3
 
-# class                 border    backgr.   text    indicator child_border
-client.focused          $coloract $coloract $white  $split $coloract
-client.focused_inactive $coloract $coloract $white  $split $colorin
-client.unfocused        $colorin  $colorin  #888888 $split $colorin
-client.urgent           #2f343a   #900000   $white  #900000 #900000
-client.placeholder      #000000   #0c0c0c   $white  #000000 #0c0c0c
-
-client.background       #ffffff
+######### COLORS ##########
+#
+# class                 border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $colorin
+client.unfocused        $colorin  $colorin  $color15 $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
 
 smart_gaps on
 smart_borders on
@@ -44,7 +49,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # Launch dmenu_set
-bindsym $mod+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi
+bindsym $mod+d exec rofi -combi-modi window#drun#ssh -show combi
 
 # change focus
 bindsym $mod+j focus left
@@ -158,4 +163,4 @@ mode "monitor" {
 bindsym $mod+r mode "resize"
 bindsym $mod+a mode "monitor"
 
-exec_always --no-startup-id exec ~/Code/scripts/polybar.sh &
+exec_always --no-startup-id exec ~/dotfiles/polybar/.config/polybar/launch.sh
