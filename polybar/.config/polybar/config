@@ -1,8 +1,8 @@
 [colors]
 background = ${xrdb:color8:#0c2b42}
 foreground = ${xrdb:color15:#f7f4ff}
-active = #308fa7
-inactive = #216272
+active = #cb6b79
+inactive = #8c4953
 highlight = ${xrdb:color2:#7B8294}
 error = ${xrdb:color9:#f384a3}
 

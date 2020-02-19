@@ -31,9 +31,6 @@ smart_borders on
 
 ### STARTUP ###
 
-# Set lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # Launch nm-applet
 exec --no-startup-id nm-applet
 
@@ -47,6 +44,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# lock
+bindsym $mod+Shift+x exec i3lock
 
 # Launch dmenu_set
 bindsym $mod+d exec rofi -combi-modi window#drun#ssh -show combi
