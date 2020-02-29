@@ -96,47 +96,6 @@ label-visible-padding = 1
 label-urgent-background = ${colors.highlight}
 label-urgent-padding = 1
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-format-playing-padding = 2
-format-playing-background = ${colors.highlight}
-
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
-
-format-connected-padding = 1
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-format-connected-background = ${colors.active}
-
-format-disconnected =
-
-ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground}
-
-[module/eth]
-type = internal/network
-interface = enp0s25
-interval = 3.0
-
-format-connected =  <label-connected>
-format-connected-padding = 1
-format-connected-background = ${colors.active}
-label-connected = %local_ip%
-
-
 [module/date]
 type = internal/date
 interval = 5
@@ -166,12 +125,6 @@ format-muted-foreground = ${colors.background}
 format-muted-background = ${colors.error}
 label-muted = MUTED
 format-muted-padding = 1
-
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 100
 
 format-charging =   <animation-charging> <label-charging>
 format-charging-padding = 1
