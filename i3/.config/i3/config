@@ -7,24 +7,24 @@ set $terminal               urxvtc
 
 #---Set color config---#
 
-set $coloract               #cb6b79
-set $colorin                #8c4953
-set $color0                 #051018
+set $coloract               #1c86a0
+set $colorin                #16677b
+set $color0                 #bcbac2
 set $color1                 #AD7484
 set $color2                 #7B8294
 set $color3                 #867A8C
 set $color4                 #6A7789
 set $color5                 #E07983
 set $color6                 #398497
-set $color7                 #bcbac2
-set $color8                 #0c2b42
-set $color9                 #f384a3
-set $color10                #8ea1d1
-set $color11                #b38dc6
-set $color12                #7a98c1
-set $color13                #ff8698
-set $color14                #3cb3d1
-set $color15                #f7f4ff
+set $color7                 #051018
+set $color8                 #a3a1a8
+set $color9                 #923851
+set $color10                #3e507f
+set $color11                #653e78
+set $color12                #354f74
+set $color13                #ba3643
+set $color14                #16677b
+set $color15                #010101
 
 #---Apply color config---#
 client.focused          $color2   $coloract $color15 $color10 $coloract
