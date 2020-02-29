@@ -7,23 +7,23 @@ set $terminal               urxvtc
 
 #---Set color config---#
 
-set $coloract               #1c86a0
-set $colorin                #16677b
+set $coloract               #f14656
+set $colorin                #ba3643
 set $color0                 #bcbac2
-set $color1                 #AD7484
-set $color2                 #7B8294
-set $color3                 #867A8C
-set $color4                 #6A7789
-set $color5                 #E07983
-set $color6                 #398497
+set $color1                 #7B8294
+set $color2                 #6A7789
+set $color3                 #E07983
+set $color4                 #398497
+set $color5                 #867A8C
+set $color6                 #AD7484
 set $color7                 #051018
 set $color8                 #a3a1a8
-set $color9                 #923851
-set $color10                #3e507f
-set $color11                #653e78
-set $color12                #354f74
-set $color13                #ba3643
-set $color14                #16677b
+set $color9                 #3e507f
+set $color10                #354f74
+set $color11                #ba3643
+set $color12                #16677b
+set $color13                #653e78
+set $color14                #923851
 set $color15                #010101
 
 #---Apply color config---#
@@ -42,7 +42,7 @@ gaps inner 8
 smart_gaps on
 smart_borders on
 
-new_window pixel 3
+new_window pixel 4
 
 default_border pixel 4
 hide_edge_borders smart
