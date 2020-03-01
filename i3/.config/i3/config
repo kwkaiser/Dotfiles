@@ -7,23 +7,23 @@ set $terminal               urxvtc
 
 #---Set color config---#
 
-set $coloract               #f14656
-set $colorin                #ba3643
-set $color0                 #bcbac2
-set $color1                 #7B8294
-set $color2                 #6A7789
-set $color3                 #E07983
-set $color4                 #398497
-set $color5                 #867A8C
-set $color6                 #AD7484
-set $color7                 #051018
-set $color8                 #a3a1a8
-set $color9                 #3e507f
-set $color10                #354f74
-set $color11                #ba3643
-set $color12                #16677b
-set $color13                #653e78
-set $color14                #923851
+set $coloract               #e1a940
+set $colorin                #ad8232
+set $color0                 #c9c5bb
+set $color1                 #EB9B5F
+set $color2                 #A65E56
+set $color3                 #DA694E
+set $color4                 #708384
+set $color5                 #6D7D81
+set $color6                 #D0AE6F
+set $color7                 #090C0F
+set $color8                 #afaba2
+set $color9                 #c06826
+set $color10                #893026
+set $color11                #b2391d
+set $color12                #396e71
+set $color13                #37636e
+set $color14                #ad8232
 set $color15                #010101
 
 #---Apply color config---#
@@ -58,7 +58,7 @@ exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/l
 
 bindsym $mod+Return             exec i3-sensible-terminal
 bindsym $mod+Shift+q            kill
-bindsym $mod+d                  exec rofi -combi-modi window#drun#ssh -show combi # fix later
+bindsym $mod+d                  exec rofi -show run
 bindsym $mod+Shift+x            exec i3lock
 bindsym $mod+f                  fullscreen toggle
 bindsym $mod+Shift+space        floating toggle

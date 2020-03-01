@@ -1,0 +1,11 @@
+A couple notes:
+
+- When unbinding parts of the GPU, all pieces must be unbound. However, only the first two should be passed through to the VM (e.g. leave the USB controllers out).
+
+- When working with looking glass, disable the virtual touchscreen passed through to get mouse input to work.
+
+- Have a dummy port connected via HDMI, not via DisplayPort. The DisplayPort dummy plug will half work, but you won't be able to see anything other than the skeleton of windows.
+
+- The mount / unmount scripts should work, but will take their sweetass time with the USB controller pieces of the GPU. Be patient with them.
+
+- Moving the libvirt hook scripts requires using stow to a specific location (e.g. "stow libvirt/ -t /etc/")

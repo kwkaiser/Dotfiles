@@ -131,20 +131,20 @@ URxvt*font:                           	xft:Monospace:size=10:style=regular
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
 
-*.color0:       #bcbac2
-*.color1:       #7B8294
-*.color2:       #6A7789
-*.color3:       #E07983
-*.color4:       #398497
-*.color5:       #867A8C
-*.color6:       #AD7484
-*.color7:       #051018
-*.color8:       #a3a1a8
-*.color9:       #3e507f
-*.color10:      #354f74
-*.color11:      #ba3643
-*.color12:      #16677b
-*.color13:      #653e78
-*.color14:      #923851
+*.color0:       #c9c5bb
+*.color1:       #EB9B5F
+*.color2:       #A65E56
+*.color3:       #DA694E
+*.color4:       #708384
+*.color5:       #6D7D81
+*.color6:       #D0AE6F
+*.color7:       #090C0F
+*.color8:       #afaba2
+*.color9:       #c06826
+*.color10:      #893026
+*.color11:      #b2391d
+*.color12:      #396e71
+*.color13:      #37636e
+*.color14:      #ad8232
 *.color15:      #010101
 

@@ -1,10 +1,10 @@
 [colors]
-background = ${xrdb:color8:#a3a1a8}
+background = ${xrdb:color8:#afaba2}
 foreground = ${xrdb:color15:#010101}
-active = #f14656
-inactive = #ba3643
-highlight = ${xrdb:color2:#6A7789}
-error = ${xrdb:color9:#3e507f}
+active = #e1a940
+inactive = #ad8232
+highlight = ${xrdb:color2:#A65E56}
+error = ${xrdb:color9:#c06826}
 
 [bar/wpgtk]
 monitor = ${env:MONITOR:DisplayPort-1}
