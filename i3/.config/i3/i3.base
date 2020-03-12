@@ -57,15 +57,15 @@ exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/l
 
 #---Key binding config---#
 
-bindcode 107                    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindcode 78                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindcode 127                    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindcode $mod+107               exec playerctl previous
-bindcode $mod+78                exec playerctl play-pause 
-bindcode $mod+127               exec playerctl next
+bindcode $mod+76                exec playerctl previous
+bindcode $mod+95                exec playerctl play-pause 
+bindcode $mod+96                exec playerctl next
 
-bindcode $mod+Shift+78          exec pactl set-source-mute alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_SUGA_2019_10_28_56351-00.mono-fallback toggle
+bindcode $mod+Shift+95          exec pactl set-source-mute alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_SUGA_2019_10_28_56351-00.mono-fallback toggle
 
 bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
 
