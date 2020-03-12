@@ -67,9 +67,9 @@ URxvt*scrollBar:                      false
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           	xft:Monospace:size=10:style=regular
-! URxvt*boldFont:                       fontname
-! URxvt*italicFont:                     fontname
+URxvt*font:                           	xft:Hack:size=11:style=regular
+URxvt*boldFont:                         xft:Hack:size=11:style=bold
+URxvt*italicFont:                       xft:Hack:size=11:style=italic
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name

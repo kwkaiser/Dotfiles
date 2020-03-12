@@ -1,11 +1,13 @@
 " General configs "
 set nu
-set relativenumber
 set mouse=a
+set relativenumber
 
 set tabstop=2
-set softtabstop=0 expandtab
 set shiftwidth=2
+set softtabstop=0 expandtab
+
+set nowrap
 
 " Set plugins "
 call plug#begin('~/.vim/plugged')

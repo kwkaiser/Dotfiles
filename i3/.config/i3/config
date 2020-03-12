@@ -57,9 +57,9 @@ exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/l
 
 #---Key binding config---#
 
-bindcode 107                    exec pactl set-sink-volume alsa_output.pci-0000_10_00.4.analog-stereo -5%
-bindcode 78                     exec pactl set-sink-mute alsa_output.pci-0000_10_00.4.analog-stereo toggle
-bindcode 127                    exec pactl set-sink-volume alsa_output.pci-0000_10_00.4.analog-stereo +5% 
+bindcode 107                    exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindcode 78                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindcode 127                    exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 bindcode $mod+107               exec playerctl previous
 bindcode $mod+78                exec playerctl play-pause 

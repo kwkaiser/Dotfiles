@@ -67,9 +67,9 @@ URxvt*scrollBar:                      false
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           	xft:Monospace:size=10:style=regular
-! URxvt*boldFont:                       fontname
-! URxvt*italicFont:                     fontname
+URxvt*font:                           	xft:Hack:size=11:style=regular
+URxvt*boldFont:                         xft:Hack:size=11:style=bold
+URxvt*italicFont:                       xft:Hack:size=11:style=italic
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
@@ -131,20 +131,20 @@ URxvt*font:                           	xft:Monospace:size=10:style=regular
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
 
-*.color0:       #c9c5bb
-*.color1:       #EB9B5F
-*.color2:       #A65E56
-*.color3:       #DA694E
-*.color4:       #708384
-*.color5:       #6D7D81
-*.color6:       #D0AE6F
-*.color7:       #090C0F
-*.color8:       #afaba2
-*.color9:       #c06826
-*.color10:      #893026
-*.color11:      #b2391d
-*.color12:      #396e71
-*.color13:      #37636e
-*.color14:      #ad8232
-*.color15:      #010101
+*.color0:       #021924
+*.color1:       #B9493C
+*.color2:       #A55E54
+*.color3:       #F0926F
+*.color4:       #70585B
+*.color5:       #D56850
+*.color6:       #BB8770
+*.color7:       #eec3af
+*.color8:       #033a54
+*.color9:       #ff523e
+*.color10:      #e66e5d
+*.color11:      #ffb379
+*.color12:      #9e656c
+*.color13:      #ff7b54
+*.color14:      #ffa77e
+*.color15:      #fff0d8
 
