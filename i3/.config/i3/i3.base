@@ -50,23 +50,37 @@ hide_edge_borders smart
 floating_modifier $mod
 
 #---Startup / launch script config---#
-#
+
+exec_always --no-startup-id wpg -s bg3.jpg
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
 
 #---Key binding config---#
 
+bindcode 107                    exec pactl set-sink-volume alsa_output.pci-0000_10_00.4.analog-stereo -5%
+bindcode 78                     exec pactl set-sink-mute alsa_output.pci-0000_10_00.4.analog-stereo toggle
+bindcode 127                    exec pactl set-sink-volume alsa_output.pci-0000_10_00.4.analog-stereo +5% 
+
+bindcode $mod+107               exec playerctl previous
+bindcode $mod+78                exec playerctl play-pause 
+bindcode $mod+127               exec playerctl next
+
+bindcode $mod+Shift+78          exec pactl set-source-mute alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_SUGA_2019_10_28_56351-00.mono-fallback toggle
+
+bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
+
+bindsym $mod+t                  exec wpg -m
+
 bindsym $mod+Return             exec i3-sensible-terminal
 bindsym $mod+Shift+q            kill
 bindsym $mod+d                  exec rofi -show run
-bindsym $mod+Shift+x            exec i3lock
 bindsym $mod+f                  fullscreen toggle
 bindsym $mod+Shift+space        floating toggle
 
-bindsym $mod+j                  focus left
-bindsym $mod+k                  focus down
-bindsym $mod+l                  focus up
-bindsym $mod+semicolon          focus right
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
 
 bindsym $mod+Left               focus left
 bindsym $mod+Down               focus down
@@ -76,10 +90,10 @@ bindsym $mod+Right              focus right
 bindsym $mod+space              focus mode_toggle
 bindsym $mod+p                  focus parent
 
-bindsym $mod+Shift+j            move left
-bindsym $mod+Shift+k            move down
-bindsym $mod+Shift+l            move up
-bindsym $mod+Shift+semicolon    move right
+bindsym $mod+Shift+j            move down
+bindsym $mod+Shift+k            move up
+bindsym $mod+Shift+l            move right
+bindsym $mod+Shift+h            move left
 
 bindsym $mod+Shift+Left         move left
 bindsym $mod+Shift+Down         move down
@@ -87,7 +101,7 @@ bindsym $mod+Shift+Up           move up
 bindsym $mod+Shift+Right        move right
 
 bindsym $mod+v                  split v
-bindsym $mod+h                  split h
+bindsym $mod+Shift+v            split h
 
 bindsym $mod+s                  layout stacking
 bindsym $mod+w                  layout tabbed
@@ -124,7 +138,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #---Workspace monitor config---#
 
-workspace 0                     output DisplayPort-0
+workspace 0                     output DisplayPort-1
 workspace 1                     output DisplayPort-1
 workspace 2                     output DisplayPort-1
 workspace 3                     output DisplayPort-1
@@ -136,6 +150,8 @@ workspace 8                     output DisplayPort-0
 workspace 9                     output DisplayPort-0
 workspace 10                    output DisplayPort-0
 
+workspace 11                    output DisplayPort-1
+workspace 12                    output DisplayPort-0
 #----Window resize config---#
 
 mode "resize" {{
