@@ -51,8 +51,9 @@ floating_modifier $mod
 
 #---Startup / launch script config---#
 
-exec_always --no-startup-id wpg -s bg3.jpg
+exec --no-startup-id redshift
 exec --no-startup-id nm-applet
+exec_always --no-startup-id wpg -s bg3.jpg
 exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
 
 #---Key binding config---#
@@ -66,6 +67,9 @@ bindcode $mod+95                exec playerctl play-pause
 bindcode $mod+96                exec playerctl next
 
 bindcode $mod+Shift+95          exec pactl set-source-mute alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_SUGA_2019_10_28_56351-00.mono-fallback toggle
+
+bindcode $mod+Shift+74          exec redshift
+bindcode $mod+74                exec kill $(ps -C redshift)
 
 bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
 
