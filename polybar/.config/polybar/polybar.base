@@ -14,6 +14,12 @@ offset-y = 0%
 radius = 0.0
 fixed-center = true
 
+tray-position = right 
+tray-padding = 5 
+tray-transparent = true
+true tray-background = ${{colors.inactive}}
+
+
 background = ${{colors.background}}
 foreground = ${{colors.foreground}}
 
@@ -34,11 +40,7 @@ font-1 = FontAwesome:style=Regular:size=10;2
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = filesystem cpu memory pulseaudio wireless-network
-
-tray-position = none
-tray-padding = 10
-tray-background = ${{colors.inactive}}
+modules-right = filesystem cpu memory pulseaudio wlan
 
 [module/xwindow]
 type = internal/xwindow
@@ -87,15 +89,12 @@ time = %H:%M:%S
 
 label = %date%%time%
 
-[module/wireless-network]
-interval = 3
-interface = wlp6s0
+[module/wlan]
 type = internal/network
+interface = wlp6s0
+interval = 3.0
 
-label-connected = %essid% %downspeed:9% %upspeed:9%
-label-disconnected = not connected
-
-click-left = nm-applet &
+label-connected = %essid%
 
 [module/pulseaudio]
 interval = 3
