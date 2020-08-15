@@ -1,63 +1,114 @@
-# kwkaiser's i3 file #
+# kwkaiser's i3-gaps config file
 
-#---Set base config---#
+##############################
+######## BASE CONFIG #########
+##############################
 
-set $mod                    Mod1
+set $mod                    Mod4
 set $terminal               urxvtc
+floating_modifier           $mod
 
-#---Set color config---#
+##############################
+######## font config #########
+##############################
 
-set $coloract               #cb8564
-set $colorin                #8c5b45
-set $color0                 #021924
-set $color1                 #B9493C
-set $color2                 #A55E54
-set $color3                 #F0926F
-set $color4                 #70585B
-set $color5                 #D56850
-set $color6                 #BB8770
-set $color7                 #eec3af
-set $color8                 #033a54
-set $color9                 #ff523e
-set $color10                #e66e5d
-set $color11                #ffb379
-set $color12                #9e656c
-set $color13                #ff7b54
-set $color14                #ffa77e
-set $color15                #fff0d8
+font xft:Hack, Regular 11
 
-#---Apply color config---#
-client.focused          $color2   $coloract $color15 $color10 $coloract
-client.focused_inactive $coloract $coloract $color15 $color10 $colorin
-client.unfocused        $colorin  $colorin  $color15 $color10 $colorin
-client.urgent           $color2   $color2   $color15 $color2  $color2
-client.placeholder      $color0   $color8   $color15 $color0  $color8
-client.background       $color0
+##############################
+######## COLOR CONFIG ########
+##############################
 
-#---Borders, gaps, and split config---#
+# Assume colors are drwan from ~/.Xresources
+set_from_resource   $background i3wm.background #000000
+set_from_resource   $foreground i3wm.foreground #000000
+set_from_resource   $active     i3wm.active     #000000
+set_from_resource   $inactive   i3wm.inactive   #000000
+set_from_resource   $color0     i3wm.color0     #000000
+set_from_resource   $color1     i3wm.color1     #000000
+set_from_resource   $color2     i3wm.color2     #000000
+set_from_resource   $color3     i3wm.color3     #000000
+set_from_resource   $color4     i3wm.color4     #000000
+set_from_resource   $color5     i3wm.color5     #000000
+set_from_resource   $color6     i3wm.color6     #000000
+set_from_resource   $color7     i3wm.color7     #000000
+set_from_resource   $color8     i3wm.color8     #000000
+set_from_resource   $color9     i3wm.color9     #000000
+set_from_resource   $color10    i3wm.color10    #000000
+set_from_resource   $color11    i3wm.color11    #000000
+set_from_resource   $color12    i3wm.color12    #000000
+set_from_resource   $color13    i3wm.color13    #000000
+set_from_resource   $color14    i3wm.color14    #000000
+set_from_resource   $color15    i3wm.color15    #000000
+
+# Indicator color is ignorable because we turn it off
+# Set placeholder to be same as focused (because I kinda don't get it)
+
+# class                 border      backgr.       text        indicator  child_border
+client.focused          $active     $active       $color15    $active    $active
+client.focused_inactive $inactive   $inactive     $color15    $inactive  $inactive
+client.unfocused        $background $background   $color15    $background$background
+client.urgent           $color9     $color9       $color15    $color9    $color9
+client.placeholder      $active     $active       $color15    $active    $active
+client.background       $background
+
+##############################
+######### GAP CONFIG #########
+##############################
 
 gaps outer 0
 gaps inner 8
 
-smart_gaps on
-smart_borders on
+##############################
+######## WINDOW CONFIG #######
+##############################
 
-new_window pixel 4
+binding_mode_indicator no
 
-default_border pixel 4
-hide_edge_borders smart
+# Set border to 0 with the expectation that picom shadowing will clearly indicate focused region
+default_border pixel    0
+hide_edge_borders       none
+title_align             center
 
-floating_modifier $mod
+smart_gaps              on
+smart_borders           on
 
-#---Startup / launch script config---#
+##############################
+######## LAUNCH CONFIG #######
+##############################
 
-exec --no-startup-id redshift
 exec --no-startup-id nm-applet
+exec_always --no-startup-id picom --config ~/dotfiles/picom/.config/picom/picom.conf
+exec_always --no-startup-id $(redshift -c ~/dotfiles/redshift/.config/redshift/redshift.conf)
 exec_always --no-startup-id wpg -s bg3.jpg
 exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
 
-#---Key binding config---#
+##############################
+####### MONITOR CONFIG #######
+##############################
 
+# This is likely to differ on different devices (laptop vs desktop)
+
+workspace 0                     output DisplayPort-1
+workspace 1                     output DisplayPort-1
+workspace 2                     output DisplayPort-1
+workspace 3                     output DisplayPort-1
+workspace 4                     output DisplayPort-1
+workspace 5                     output DisplayPort-1
+workspace 6                     output DisplayPort-0
+workspace 7                     output DisplayPort-0
+workspace 8                     output DisplayPort-0
+workspace 9                     output DisplayPort-0
+workspace 10                    output DisplayPort-0
+
+# Used as temp spaces in some scripts
+workspace 11                    output DisplayPort-1
+workspace 12                    output DisplayPort-0
+
+##############################
+####### KEYBIND CONFIG #######
+##############################
+
+# Bind F10, F11, F12 to volume and playback controls
 bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -66,9 +117,8 @@ bindcode $mod+76                exec playerctl previous
 bindcode $mod+95                exec playerctl play-pause 
 bindcode $mod+96                exec playerctl next
 
-bindcode $mod+Shift+95          exec pactl set-source-mute alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_SUGA_2019_10_28_56351-00.mono-fallback toggle
-
-bindcode $mod+Shift+74          exec redshift
+# Bind F1 -> F4 to theming controls
+bindcode $mod+59                exec ~/dotfiles/redshift/.config/redshift/redtoggle.sh
 bindcode $mod+74                exec kill $(ps -C redshift)
 
 bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
@@ -140,49 +190,21 @@ bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+c            reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-#---Workspace monitor config---#
-
-workspace 0                     output DisplayPort-1
-workspace 1                     output DisplayPort-1
-workspace 2                     output DisplayPort-1
-workspace 3                     output DisplayPort-1
-workspace 4                     output DisplayPort-1
-workspace 5                     output DisplayPort-1
-workspace 6                     output DisplayPort-0
-workspace 7                     output DisplayPort-0
-workspace 8                     output DisplayPort-0
-workspace 9                     output DisplayPort-0
-workspace 10                    output DisplayPort-0
-
-workspace 11                    output DisplayPort-1
-workspace 12                    output DisplayPort-0
-#----Window resize config---#
+##############################
+######## MODE CONFIG #########
+##############################
 
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
         bindsym l resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym h resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "monitor" {
-        bindsym s exec dock-single
-        bindsym d exec dock-dual
-        bindsym t exec thinkpad
-
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }

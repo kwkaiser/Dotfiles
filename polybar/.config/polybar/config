@@ -1,129 +1,140 @@
+####################
+##### COLORS #######
+####################
+
 [colors]
-background = ${xrdb:color8:#033a54}
-foreground = ${xrdb:color15:#fff0d8}
-active = #cb8564
-inactive = #8c5b45
-highlight = ${xrdb:color2:#A55E54}
-error = ${xrdb:color9:#ff523e}
+background =                ${xrdb:background:#000000}
+foreground =                ${xrdb:foreground:#000000}
+active =                    ${xrdb:active:#000000}
+inactive =                  ${xrdb:inactive:#000000}
+highlight =                 ${xrdb:color2:#000000}
+error =                     ${xrdb:color9:#000000}
+
+####################
+###### BARS ########
+####################
 
 [bar/wpgtk]
-monitor = ${env:MONITOR:DisplayPort-1}
-width = 100%
-height = 24
-offset-y = 0%
-radius = 0.0
-fixed-center = true
+monitor =                   ${env:MONITOR:DisplayPort-1}
+width =                     100%
+height =                    24
+offset-y =                  0%
+radius =                    0.0
+fixed-center =              true
 
-tray-position = right 
-tray-padding = 5 
-tray-transparent = true
-true tray-background = ${colors.inactive}
+tray-position =             right 
+tray-padding =              10 
+tray-transparent =          true
+true tray-background =      ${colors.inactive}
 
+background =                ${colors.background}
+foreground =                ${colors.foreground}
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+line-size =                 0
+label-line-color =          #f00
 
-line-size = 0
-label-line-color = #f00
+border-size =               0
+border-color =              #00000000
 
-border-size = 0
-border-color = #00000000
+padding-left =              0 
+padding-right =             0
 
-padding-left = 0 
-padding-right = 0
-
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left =        2
+module-margin-right =       2
 
 font-0 = menlo:fontformat=truetype:size=8;1
 font-1 = FontAwesome:style=Regular:size=10;2
 
-modules-left = i3 xwindow
-modules-center = date
-modules-right = filesystem cpu memory pulseaudio wlan
+modules-left =              i3 xwindow
+modules-center =            date
+modules-right =             filesystem cpu memory pulseaudio wlan
+
+####################
+##### MODULES ######
+####################
 
 [module/xwindow]
-type = internal/xwindow
-format-background = ${colors.active}
-format-padding = 1
-label = %title:0:25: ...%
+type =                      internal/xwindow
+format-background =         ${colors.active}
+format-padding =            1
+label =                     %title:0:25: ...%
 
 [module/i3]
-type = internal/i3
-format = <label-mode><label-state>
-index-sort = true
-wrapping-scroll = false
-fuzzy-matching = true
+type =                      internal/i3
+format =                    <label-mode><label-state>
+index-sort =                true
+wrapping-scroll =           false
+fuzzy-matching =            true
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+pin-workspaces =            true
 
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 9
-ws-icon-3 = 10
-ws-icon-default = 
+ws-icon-0 =                 1
+ws-icon-1 =                 2
+ws-icon-2 =                 9
+ws-icon-3 =                 10
+ws-icon-default =           
 
-label-mode-padding = 1
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.highlight}
+label-mode-padding =        1
+label-mode-foreground =     ${colors.foreground}
+label-mode-background =     ${colors.highlight}
 
-label-focused-background = ${colors.active}
-label-focused-padding = 1
+label-focused-background =  ${colors.active}
+label-focused-padding =     1
 
-label-unfocused-padding = 1
-label-unfocused-background = ${colors.inactive}
+label-unfocused-padding =   1
+label-unfocused-background= ${colors.inactive}
 
-label-visible-background = ${colors.highlight}
-label-visible-padding = 1
+label-visible-background=   ${colors.highlight}
+label-visible-padding =     1
 
-label-urgent-background = ${colors.highlight}
-label-urgent-padding = 1
+label-urgent-background =   ${colors.highlight}
+label-urgent-padding =      1
 
 [module/date]
-type = internal/date
-interval = 5
+type =                      internal/date
+interval =                  5
 
-date = "%Y-%m-%d    |   "
-time = %H:%M:%S 
+date =                      "%Y-%m-%d    |   "
+time =                      %H:%M:%S 
 
-label = %date%%time%
+label =                     %date%%time%
 
 [module/wlan]
-type = internal/network
-interface = wlp6s0
-interval = 3.0
+type =                      internal/network
+interface =                 wlp6s0
+interval =                  3.0
 
-label-connected = %essid%
+label-connected =           %essid%
 
 [module/pulseaudio]
-interval = 3
-sink = @DEFAULT_SINK@
-type = internal/pulseaudio
-click-right = pavucontrol &
+interval =                  3
+sink =                      @DEFAULT_SINK@
+type =                      internal/pulseaudio
+click-right =               pavucontrol &
 
 
 [module/memory]
-interval = 3
-type = internal/memory
-label = MEM %gb_used%/%gb_free%
+interval =                  3
+type =                      internal/memory
+label =                     MEM %gb_used%/%gb_free%
 
 [module/cpu]
-interval = 3
-type = internal/cpu
-label = CPU %percentage%%
+interval =                  3
+type =                      internal/cpu
+label =                     CPU %percentage%%
 
 [module/filesystem]
-interval = 5
-type = internal/fs
-fixed-values = true
-mount-0 = /
-label-mounted =  %mountpoint%: %percentage_used%% of %total%
-label-unmounted = %mountpoint% is not mounted
+interval =                  5
+type =                      internal/fs
+fixed-values =              true
+mount-0 =                   /
+label-mounted =             %mountpoint%: %percentage_used%% of %total%
+label-unmounted =           %mountpoint% is not mounted
 
-[settings]
-screenchange-reload = true
+[settings           ]
+screenchange-reload =       true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 0
+margin-top =                5
+margin-bottom =             0

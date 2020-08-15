@@ -1,0 +1,10 @@
+! Functionality
+URxvt*scrollBar:                    false
+
+! Font
+URxvt*font:                         xft:Hack:size=11:style=regular
+URxvt*boldFont:                     xft:Hack:size=11:style=bold
+URxvt*italicFont:                   xft:Hack:size=11:style=italic
+
+! Appearance
+URxvt*internalBorder:               10
