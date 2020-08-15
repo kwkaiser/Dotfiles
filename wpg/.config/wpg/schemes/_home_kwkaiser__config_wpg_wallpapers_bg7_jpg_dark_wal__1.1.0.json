@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/kwkaiser/.config/wpg/wallpapers/bg7.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#081826",
+        "foreground": "#ffe2e2",
+        "cursor": "#ffe2e2"
+    },
+    "colors": {
+        "color0": "#081826",
+        "color1": "#A18FA0",
+        "color2": "#648FA6",
+        "color3": "#E29F94",
+        "color4": "#5A7691",
+        "color5": "#B5788E",
+        "color6": "#279FB5",
+        "color7": "#f1c0c0",
+        "color8": "#0f3250",
+        "color9": "#e4a6e1",
+        "color10": "#70bfe9",
+        "color11": "#ffbda8",
+        "color12": "#6599cb",
+        "color13": "#fe88b3",
+        "color14": "#24d8f9",
+        "color15": "#ffe2e2"
+    }
+}
