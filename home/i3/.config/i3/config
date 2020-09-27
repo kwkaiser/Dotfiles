@@ -86,8 +86,8 @@ exec --no-startup-id python ~/.bin/colorswitch.py --img=bg8.jpg
 exec --no-startup-id sleep 10 && systemctl --user start redshift
 
 
-exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/home/picom/.config/picom/pilaunch.sh)
-exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/home/polybar/.config/polybar/launch.sh)
+exec_always --no-startup-id $(/usr/bin/bash ~/.config/picom/pilaunch.sh)
+exec_always --no-startup-id $(/usr/bin/bash ~/.config/polybar/launch.sh)
 
 ##############################
 ####### MONITOR CONFIG #######
@@ -120,14 +120,14 @@ bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindcode $mod+67                exec /bin/bash ~/dotfiles/home/redshift/.config/redshift/redlaunch.sh
+bindcode $mod+67                exec /bin/bash ~/.config/redshift/redlaunch.sh
 bindcode $mod+76                exec playerctl previous
 bindcode $mod+95                exec playerctl play-pause 
 bindcode $mod+96                exec playerctl next
 
 bindcode $mod+74                exec kill $(ps -C redshift)
 
-bindsym $mod+Shift+x            exec ~/dotfiles/home/i3/.config/i3/lock.sh
+bindsym $mod+Shift+x            exec ~/.config/i3/lock.sh
 
 bindsym $mod+t                  exec python ~/.bin/colorswitch.py
 bindsym $mod+Shift+g            exec python ~/.bin/colorswitch.py --light=True --img=current

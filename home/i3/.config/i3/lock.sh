@@ -1,10 +1,10 @@
 #!/bin/bash
 
 i3-msg 'workspace 11'
-sxiv -A 40 -a ~/dotfiles/aesthetics/.wallpapers/pixels5.gif -f -b &
+sxiv -A 40 -a ~/Pictures/gifs/pixels5.gif -f -b &
 
 sleep 0.4 && i3-msg 'workspace 12' &
-sxiv -A 40 -a ~/dotfiles/aesthetics/.wallpapers/pixels3.gif -f -b &
+sxiv -A 40 -a ~/Pictures/gifs/pixels3.gif -f -b &
 
 unclutter -idle 0.01 -root &
 xtrlock &&
