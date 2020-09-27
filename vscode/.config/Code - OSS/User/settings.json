@@ -1,0 +1,19 @@
+{
+    "breadcrumbs.enabled": true,
+    "explorer.confirmDelete": false,
+    "python.condaPath": "/home/kwkaiser/conda/bin/python3.7",
+    "python.dataScience.allowLiveShare": false,
+    "workbench.statusBar.visible": true,
+    "explorer.confirmDragAndDrop": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "workbench.enableExperiments": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Xresources",
+    "editor.lightbulb.enabled": false,
+    "editor.cursorBlinking": "smooth",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.startupEditor": "newUntitledFile"
+}

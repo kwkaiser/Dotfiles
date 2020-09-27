@@ -69,17 +69,21 @@ default_border pixel    0
 hide_edge_borders       none
 title_align             center
 
-smart_gaps              on
-smart_borders           on
+#smart_gaps              on
+#smart_borders           on
 
 ##############################
 ######## LAUNCH CONFIG #######
 ##############################
 
+exec --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120 --primary
+exec --no-startup-id xrandr --output DisplayPort-1 --mode 1920x1080 --rate 120
+
 exec --no-startup-id nm-applet
-exec_always --no-startup-id picom --config ~/dotfiles/picom/.config/picom/picom.conf
-exec_always --no-startup-id $(redshift -c ~/dotfiles/redshift/.config/redshift/redshift.conf)
-exec_always --no-startup-id wpg -s bg3.jpg
+exec --no-startup-id wpg -s bg3.jpg
+exec --no-startup-id sleep 10 && systemctl --user start redshift
+
+exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/picom/.config/picom/pilaunch.sh)
 exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
 
 ##############################
@@ -113,12 +117,11 @@ bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
+bindcode $mod+67                exec /bin/bash ~/dotfiles/redshift/.config/redshift/redlaunch.sh
 bindcode $mod+76                exec playerctl previous
 bindcode $mod+95                exec playerctl play-pause 
 bindcode $mod+96                exec playerctl next
 
-# Bind F1 -> F4 to theming controls
-bindcode $mod+59                exec ~/dotfiles/redshift/.config/redshift/redtoggle.sh
 bindcode $mod+74                exec kill $(ps -C redshift)
 
 bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
