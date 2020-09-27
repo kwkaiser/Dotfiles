@@ -1,28 +1,12 @@
 /* Default color scheme */
-@define-color color0 #031B22;
-@define-color color1 #1164E5;
-@define-color color2 #3076FB;
-@define-color color3 #1C95F5;
-@define-color color4 #318EFC;
-@define-color color5 #5C9CCD;
-@define-color color6 #52A2F1;
-@define-color color7 #d9d2da;
-@define-color color8 #979398;
-@define-color color9 #1164E5;
-@define-color color10 #3076FB;
-@define-color color11 #1C95F5;
-@define-color color12 #318EFC;
-@define-color color13 #5C9CCD;
-@define-color color14 #52A2F1;
-@define-color color15 #d9d2da;
-@define-color selected_bg_color #d9d2da;
-@define-color bg_color mix(@color0, @color15, 0.12);
-@define-color tooltip_bg_color mix(@color0, @color15, 0.04);
-@define-color base_color mix(@color0, @color15, 0);
-@define-color fg_color @color15;
-@define-color text_color @color15;
-@define-color selected_fg_color @color15;
-@define-color tooltip_fg_color @color15;
+@define-color bg_color #051018;
+@define-color fg_color #bcbac2;
+@define-color base_color #6A7789;
+@define-color text_color #bcbac2;
+@define-color selected_bg_color #bcbac2;
+@define-color selected_fg_color #bcbac2;
+@define-color tooltip_bg_color #051018;
+@define-color tooltip_fg_color #bcbac2;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -39,31 +23,31 @@
 @define-color dark_shadow #222222;
 
 /* misc colors used by gtk+ */
-@define-color info_fg_color @text_color;
-@define-color info_bg_color @bg_color;
-@define-color warning_fg_color @text_color;
-@define-color warning_bg_color @bg_color;
-@define-color question_fg_color @text_color;
-@define-color question_bg_color @theme_selected_bg_color;
-@define-color error_fg_color @text_color;
-@define-color error_bg_color #f52400;
+@define-color info_fg_color white;
+@define-color info_bg_color #BACF66;
+@define-color warning_fg_color white;
+@define-color warning_bg_color #E6A682;
+@define-color question_fg_color white;
+@define-color question_bg_color #74C47B;
+@define-color error_fg_color white;
+@define-color error_bg_color #E682C8;
 @define-color link_color mix (@theme_selected_bg_color, black, 0.15);
 @define-color success_color #53a93f;
 @define-color warning_color #f57900;
-@define-color error_color #f52400;
+@define-color error_color #cc0000;
 
 /* widget colors*/
-@define-color border_color shade(@theme_selected_bg_color, 0.2);
-@define-color button_normal_color shade(@theme_bg_color, 1.20);
-@define-color button_info_color @theme_selected_bg_color;
-@define-color button_default_active_color @theme_selected_bg_color;
+@define-color border_color #363D43;
+@define-color button_normal_color #3F474A;
+@define-color button_info_color #72B279;
+@define-color button_default_active_color shade(@theme_selected_bg_color, 0.857);
 @define-color entry_border_color shade(@theme_base_color, 0.9);
-@define-color frame_border_bottom_color shade(@bg_color, 0.8);
-@define-color sel_color shade(@theme_selected_bg_color, 0.857);
-@define-color switch_bg_color shade(@bg_color, 0.8);
+@define-color frame_border_bottom_color #E3E4E7;
+@define-color sel_color #B98CD7;
+@define-color switch_bg_color #C9CBCF;
 @define-color panel_bg_color @bg_color;
 @define-color panel_fg_color @fg_color;
-@define-color borders shade(@theme_selected_bg_color, 0.857);
+@define-color borders #FAFAFA;
 @define-color scrollbar_trough shade(@theme_base_color, 0.9);
 @define-color scrollbar_slider_prelight mix(@scrollbar_trough, @theme_fg_color, 0.5);
 
@@ -81,6 +65,7 @@
 @define-color wm_border_unfocused @border_color;
 
 @import url("gtk-widgets.css");
+@import url("gtk-widgets-assets.css");
 @import url("unity.css");
 @import url("widgets/button.css");
 @import url("widgets/cell-row.css");
@@ -95,7 +80,6 @@
 @import url("widgets/scrollbar.css");
 @import url("widgets/separator.css");
 @import url("widgets/sidebar.css");
-@import url("widgets/chrome.css");
 @import url("widgets/spinbutton.css");
 @import url("widgets/spinner.css");
 @import url("widgets/switch.css");

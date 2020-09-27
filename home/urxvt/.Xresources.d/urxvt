@@ -9,5 +9,3 @@ URxvt*italicFont:                   xft:Hack:size=11:style=italic
 ! Appearance
 URxvt*internalBorder:               10
 
-! Plugins
-URxvt.perl-ext-common:              default,clipboard,...,config-reload

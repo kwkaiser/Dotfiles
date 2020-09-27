@@ -79,12 +79,15 @@ title_align             center
 exec --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120 --primary
 exec --no-startup-id xrandr --output DisplayPort-1 --mode 1920x1080 --rate 120
 
+exec --no-startup-id urxvtd -q -o -f
+
 exec --no-startup-id nm-applet
-exec --no-startup-id wpg -s bg3.jpg
+exec --no-startup-id python ~/.bin/colorswitch.py --img=bg8.jpg
 exec --no-startup-id sleep 10 && systemctl --user start redshift
 
-exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/picom/.config/picom/pilaunch.sh)
-exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/polybar/.config/polybar/launch.sh)
+
+exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/home/picom/.config/picom/pilaunch.sh)
+exec_always --no-startup-id $(/usr/bin/bash ~/dotfiles/home/polybar/.config/polybar/launch.sh)
 
 ##############################
 ####### MONITOR CONFIG #######
@@ -117,18 +120,20 @@ bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindcode $mod+67                exec /bin/bash ~/dotfiles/redshift/.config/redshift/redlaunch.sh
+bindcode $mod+67                exec /bin/bash ~/dotfiles/home/redshift/.config/redshift/redlaunch.sh
 bindcode $mod+76                exec playerctl previous
 bindcode $mod+95                exec playerctl play-pause 
 bindcode $mod+96                exec playerctl next
 
 bindcode $mod+74                exec kill $(ps -C redshift)
 
-bindsym $mod+Shift+x            exec ~/dotfiles/i3/.config/i3/lock.sh
+bindsym $mod+Shift+x            exec ~/dotfiles/home/i3/.config/i3/lock.sh
 
-bindsym $mod+t                  exec wpg -m
+bindsym $mod+t                  exec python ~/.bin/colorswitch.py
+bindsym $mod+Shift+g            exec python ~/.bin/colorswitch.py --light=True --img=current
+bindsym $mod+g                  exec python ~/.bin/colorswitch.py --light=False --img=current
 
-bindsym $mod+Return             exec i3-sensible-terminal
+bindsym $mod+Return             exec urxvtc
 bindsym $mod+Shift+q            kill
 bindsym $mod+d                  exec rofi -show run
 bindsym $mod+f                  fullscreen toggle
