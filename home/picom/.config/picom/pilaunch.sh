@@ -5,7 +5,7 @@ cd $DIR
 
 if $(ps -C "picom" | grep -qi "picom"); then
     kill $(ps -C picom)
-    sleep 3
+    sleep 0.1
     picom --config picom.conf
 else
     picom --config picom.conf

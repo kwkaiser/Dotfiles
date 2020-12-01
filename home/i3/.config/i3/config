@@ -57,6 +57,7 @@ client.background       $background
 
 gaps outer 0
 gaps inner 8
+# gaps top 43 
 
 ##############################
 ######## WINDOW CONFIG #######
@@ -80,11 +81,11 @@ exec --no-startup-id xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120 -
 exec --no-startup-id xrandr --output DisplayPort-1 --mode 1920x1080 --rate 120
 
 exec --no-startup-id urxvtd -q -o -f
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 exec --no-startup-id nm-applet
-exec --no-startup-id python ~/.bin/colorswitch.py --img=bg8.jpg
+exec --no-startup-id python ~/.bin/colorswitch.py 
 exec --no-startup-id sleep 10 && systemctl --user start redshift
-
 
 exec_always --no-startup-id $(/usr/bin/bash ~/.config/picom/pilaunch.sh)
 exec_always --no-startup-id $(/usr/bin/bash ~/.config/polybar/launch.sh)

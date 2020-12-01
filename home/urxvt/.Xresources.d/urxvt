@@ -7,5 +7,7 @@ URxvt*boldFont:                     xft:Hack:size=11:style=bold
 URxvt*italicFont:                   xft:Hack:size=11:style=italic
 
 ! Appearance
-URxvt*internalBorder:               10
+URxvt*internalBorder:               30
 
+! Extensions
+! URxvt.perl-ext-common: default,clipboard,...,config-reload

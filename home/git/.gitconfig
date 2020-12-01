@@ -1,0 +1,11 @@
+[core]
+    editor = vim
+[user]
+    name  = Karl Kaiser
+    email = karl@kwkaiser.io
+[alias]
+    hist = log --all --graph --decorate --oneline
+[diff]
+    tool = code
+[difftool "code"]
+    cmd = code --wait --diff $LOCAL $REMOTE

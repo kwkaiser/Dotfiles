@@ -3,138 +3,149 @@
 ####################
 
 [colors]
+
+active     =                ${xrdb:active:#000000}
+inactive   =                ${xrdb:inactive:#000000}
 background =                ${xrdb:background:#000000}
 foreground =                ${xrdb:foreground:#000000}
-active =                    ${xrdb:active:#000000}
-inactive =                  ${xrdb:inactive:#000000}
-highlight =                 ${xrdb:color2:#000000}
-error =                     ${xrdb:color9:#000000}
+
+color0     =                ${xrdb:color0:#000000} 
+color1     =                ${xrdb:color1:#000000} 
+color2     =                ${xrdb:color2:#000000} 
+color3     =                ${xrdb:color3:#000000} 
+color4     =                ${xrdb:color4:#000000} 
+color5     =                ${xrdb:color5:#000000} 
+color6     =                ${xrdb:color6:#000000} 
+color7     =                ${xrdb:color7:#000000} 
+color8     =                ${xrdb:color8:#000000} 
+color9     =                ${xrdb:color9:#000000} 
+color10    =                ${xrdb:color10:#000000} 
+color11    =                ${xrdb:color11:#000000} 
+color12    =                ${xrdb:color12:#000000} 
+color13    =                ${xrdb:color13:#000000} 
+color14    =                ${xrdb:color14:#000000} 
+color15    =                ${xrdb:color15:#000000} 
+
+highlight =                 ${xrdb:foreground:#000000}
+error =                     ${xrdb:color2:#000000}
 
 ####################
 ###### BARS ########
 ####################
 
-[bar/wpgtk]
-monitor =                   ${env:MONITOR:DisplayPort-1}
-width =                     100%
-height =                    24
-offset-y =                  0%
-radius =                    0.0
-fixed-center =              true
+[bar/left]
+monitor                    = ${env:MONITOR:DisplayPort-1}
+font-0                     = Hack:style=Regular:size=10;
 
-tray-position =             right 
-tray-padding =              10 
-tray-transparent =          true
-true tray-background =      ${colors.inactive}
+width                      = 100%
+height                     = 3%
+padding                    = 5
 
-background =                ${colors.background}
-foreground =                ${colors.foreground}
+offset-x                   = 0 
+offset-y                   = 0 
+radius                     = 15 
 
-line-size =                 0
-label-line-color =          #f00
+background                 = ${colors.background}
+foreground                 = ${colors.foreground}
 
-border-size =               0
-border-color =              #00000000
+module-margin-left         = 3
+module-margin-right        = 3
 
-padding-left =              0 
-padding-right =             0
+border-size                = 10
+modules-left               = i3
+modules-center             = date
+modules-right              = network
 
-module-margin-left =        2
-module-margin-right =       2
+[bar/right]
+monitor                    = ${env:MONITOR:DisplayPort-0}
+font-0                     = Hack:style=Regular:size=10;
 
-font-0 = menlo:fontformat=truetype:size=8;1
-font-1 = FontAwesome:style=Regular:size=10;2
+width                      = 100%
+height                     = 3%
+padding                    = 5
 
-modules-left =              i3 xwindow
-modules-center =            date
-modules-right =             filesystem cpu memory pulseaudio wlan
+offset-x                   = 0 
+offset-y                   = 0 
+radius                     = 15 
+
+background                 = ${colors.background}
+foreground                 = ${colors.foreground}
+
+module-margin-left         = 3
+module-margin-right        = 3
+
+border-size                = 10
+modules-left               = pulse cpu mem
+modules-center             = time
+modules-right              = i3
 
 ####################
 ##### MODULES ######
 ####################
 
-[module/xwindow]
-type =                      internal/xwindow
-format-background =         ${colors.active}
-format-padding =            1
-label =                     %title:0:25: ...%
-
 [module/i3]
-type =                      internal/i3
-format =                    <label-mode><label-state>
-index-sort =                true
-wrapping-scroll =           false
-fuzzy-matching =            true
+type                       = internal/i3
+format                     = <label-mode><label-state>
+pin-workspaces             = true
+index-sort                 = true
+fuzzy-matching             = true
+wrapping-scroll            = false
 
-; Only show workspaces on the same output as the bar
-pin-workspaces =            true
+label-focused-foreground   = ${colors.highlight}
+label-focused-background   = ${colors.active}
+label-focused-padding      = 3 
 
-ws-icon-0 =                 1
-ws-icon-1 =                 2
-ws-icon-2 =                 9
-ws-icon-3 =                 10
-ws-icon-default =           
+label-unfocused-foreground = ${colors.inactive}
+label-unfocused-background = ${colors.background}
+label-unfocused-padding    = 3  
 
-label-mode-padding =        1
-label-mode-foreground =     ${colors.foreground}
-label-mode-background =     ${colors.highlight}
+label-visible-foreground   = ${colors.highlight}
+label-visible-background   = ${colors.active}
+label-visible-padding      = 3 
 
-label-focused-background =  ${colors.active}
-label-focused-padding =     1
+label-urgent-foreground    = ${colors.highlight}
+label-urgent-background    = ${colors.background}
+label-urgent-padding       = 3 
 
-label-unfocused-padding =   1
-label-unfocused-background= ${colors.inactive}
-
-label-visible-background=   ${colors.highlight}
-label-visible-padding =     1
-
-label-urgent-background =   ${colors.highlight}
-label-urgent-padding =      1
 
 [module/date]
-type =                      internal/date
-interval =                  5
+type                       = internal/date
+interval                   = 5   
+date                       = %Y-%m-%d
+label                      = %date%
 
-date =                      "%Y-%m-%d    |   "
-time =                      %H:%M:%S 
+[module/time]
+type                       = internal/date
+interval                   = 5
+date                       = %H:%M:%S
+label                      = %date%
 
-label =                     %date%%time%
+[module/network]
+type                       = internal/network
+interval                   = 3
+interface                  = enp8s0
 
-[module/wlan]
-type =                      internal/network
-interface =                 wlp6s0
-interval =                  3.0
-
-label-connected =           %essid%
-
-[module/pulseaudio]
-interval =                  3
-sink =                      @DEFAULT_SINK@
-type =                      internal/pulseaudio
-click-right =               pavucontrol &
-
-
-[module/memory]
-interval =                  3
-type =                      internal/memory
-label =                     MEM %gb_used%/%gb_free%
+label-connected            = %local_ip%: %downspeed:9% %upspeed:9%
+label-disconnected         = disconnected
 
 [module/cpu]
-interval =                  3
-type =                      internal/cpu
-label =                     CPU %percentage%%
+interval                   = 1 
+type                       = internal/cpu
+label                      = CPU: %percentage%%
 
-[module/filesystem]
-interval =                  5
-type =                      internal/fs
-fixed-values =              true
-mount-0 =                   /
-label-mounted =             %mountpoint%: %percentage_used%% of %total%
-label-unmounted =           %mountpoint% is not mounted
+[module/mem]
+type                       = internal/memory
+interval                   = 1
+label                      = MEM: %percentage_used%%
 
-[settings           ]
-screenchange-reload =       true
+[module/pulse]
+type                       = internal/pulseaudio
+interval                   = 5
+sink                       = @DEFAULT_SINK@
+format-volume              = VOL: <label-volume>
 
-[global/wm]
-margin-top =                5
-margin-bottom =             0
+label-muted                = VOL: muted
+label-muted-background     = ${colors.active}
+click-right                = pavucontrol &
+
+ 

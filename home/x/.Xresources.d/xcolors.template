@@ -1,5 +1,5 @@
-*.active:                           {color4}
-*.inactive:                         {color1}
+*.active:                           {color1}
+*.inactive:                         {color8}
 *.foreground:                       {foreground}
 *.background:                       {background}
 *.border:                           {background}

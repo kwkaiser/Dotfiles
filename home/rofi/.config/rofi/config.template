@@ -3,10 +3,10 @@ rofi.width:                          50
 rofi.lines:                          15
 rofi.columns:                        1
 rofi.font:                           roboto mono 10
-rofi.color-normal:                   {color0}, {color15}, {color0}, {color7}, {color15}
+rofi.color-normal:                   {color0}, {color15}, {color0}, {color3}, {color15}
 rofi.color-urgent:                   {color0}, #d6b48d, #22231D, #d6b48d, {color15}
 rofi.color-active:                   {color0}, {color14}, {color0}, {color14}, {color0}
-rofi.color-window:                   {color0}, {color7}, {color7}
+rofi.color-window:                   {color0}, {color4}, {color1}
 rofi.bw:                             5
 rofi.location:                       0
 rofi.padding:                        5
