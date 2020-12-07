@@ -4,8 +4,8 @@ alias roll="rolldice"
 # urxvt unicode color bug fix
 TERM='xterm-256color'
 
-# CUDA setup
-# PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${PATH:+:${PATH}}"
+# Mindstand stuff
+NEO_VOLUME_LOC=$HOME/Documents/mindstand/testing
 
 # set default editor to vim
 VISUAL="vim"
@@ -29,3 +29,4 @@ PATH="$PATH:/opt/cuda/bin"
 PATH="$PATH:/usr/bin/site_perl"
 PATH="$PATH:/usr/bin/vendor_perl"
 PATH="$PATH:/usr/bin/core_perl"
+
