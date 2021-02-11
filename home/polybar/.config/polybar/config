@@ -26,8 +26,8 @@ color13    =                ${xrdb:color13:#000000}
 color14    =                ${xrdb:color14:#000000} 
 color15    =                ${xrdb:color15:#000000} 
 
-highlight =                 ${xrdb:foreground:#000000}
-error =                     ${xrdb:color2:#000000}
+highlight =                 ${xrdb:color8:#000000}
+error =                     ${xrdb:color9:#000000}
 
 ####################
 ###### BARS ########

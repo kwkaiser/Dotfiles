@@ -40,9 +40,6 @@ set_from_resource   $color13    i3wm.color13    #000000
 set_from_resource   $color14    i3wm.color14    #000000
 set_from_resource   $color15    i3wm.color15    #000000
 
-# Indicator color is ignorable because we turn it off
-# Set placeholder to be same as focused (because I kinda don't get it)
-
 # class                 border      backgr.       text        indicator  child_border
 client.focused          $active     $active       $color15    $active    $active
 client.focused_inactive $inactive   $inactive     $color15    $inactive  $inactive
@@ -84,8 +81,7 @@ exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
 exec --no-startup-id nm-applet
-exec --no-startup-id python ~/.bin/colorswitch.py 
-exec --no-startup-id sleep 10 && systemctl --user start redshift
+exec --no-startup-id python -m colortemp --rand --apply --rel
 
 exec_always --no-startup-id $(/usr/bin/bash ~/.config/picom/pilaunch.sh)
 exec_always --no-startup-id $(/usr/bin/bash ~/.config/polybar/launch.sh)
@@ -121,22 +117,22 @@ bindcode 76                     exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindcode 95                     exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 96                     exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-bindcode $mod+67                exec /bin/bash ~/.config/redshift/redlaunch.sh
 bindcode $mod+76                exec playerctl previous
 bindcode $mod+95                exec playerctl play-pause 
 bindcode $mod+96                exec playerctl next
 
-bindcode $mod+74                exec kill $(ps -C redshift)
-
 bindsym $mod+Shift+x            exec ~/.config/i3/lock.sh
 
-bindsym $mod+t                  exec python ~/.bin/colorswitch.py
-bindsym $mod+Shift+g            exec python ~/.bin/colorswitch.py --light=True --img=current
-bindsym $mod+g                  exec python ~/.bin/colorswitch.py --light=False --img=current
+bindsym $mod+t                  exec python -m colortemp --rand --fix --apply --rel
+bindsym $mod+Shift+g            exec python -m colortemp --fix --light --apply --rel
+bindsym $mod+g                  exec python -m colortemp --fix --apply --rel
 
 bindsym $mod+Return             exec urxvtc
 bindsym $mod+Shift+q            kill
-bindsym $mod+d                  exec rofi -show run
+bindsym $mod+Shift+d            exec rofi -show run
+bindsym $mod+Shift+s		exec rofi -show ssh
+bindsym $mod+Shift+w		exec rofi -show window
+bindsym $mod+Shift+p		exec rofi-pass
 bindsym $mod+f                  fullscreen toggle
 bindsym $mod+Shift+space        floating toggle
 
@@ -197,7 +193,7 @@ bindsym $mod+a mode "monitor"
 
 bindsym $mod+Shift+r            restart
 bindsym $mod+Shift+c            reload
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec 	"i3-nagbar -t warning -m 'Yo you tryna dip?' -b 'yuh' 'i3-msg exit'"
 
 ##############################
 ######## MODE CONFIG #########

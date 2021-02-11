@@ -1,8 +1,8 @@
-*.active:                           {color1}
+*.active:                           {color7}
 *.inactive:                         {color8}
-*.foreground:                       {foreground}
-*.background:                       {background}
-*.border:                           {background}
+*.foreground:                       {color1}
+*.background:                       {color0}
+*.border:                           {color0}
 *.color0:                           {color0}
 *.color1:                           {color1}
 *.color2:                           {color2}
@@ -11,7 +11,7 @@
 *.color5:                           {color5}
 *.color6:                           {color6}
 *.color7:                           {color7}
-*.color8:                           {color8}
+*.color8:                           {color6}
 *.color9:                           {color9}
 *.color10:                          {color10}
 *.color11:                          {color11}
