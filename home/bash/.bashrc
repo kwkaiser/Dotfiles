@@ -1,6 +1,8 @@
 # Aliases
 alias roll="rolldice"
 
+GPGHOME="$HOME/.gnupg"
+
 # urxvt unicode color bug fix
 TERM='xterm-256color'
 
