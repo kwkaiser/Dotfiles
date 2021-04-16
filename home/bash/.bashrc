@@ -1,5 +1,6 @@
 # Aliases
 alias roll="rolldice"
+alias journal="pass edit personal/journal/$(date +"%Y-%m-%d")"
 
 # urxvt unicode color bug fix
 TERM='xterm-256color'
@@ -7,9 +8,11 @@ TERM='xterm-256color'
 # Mindstand stuff
 NEO_VOLUME_LOC=$HOME/Documents/mindstand/testing
 
+# Style
+QT_QPA_PLATFORMTHEME=gtk2
+
 # set default editor to vim
-VISUAL="vim"
-EDITOR="$VISUAL"
+export EDITOR="/usr/bin/vim"
 
 # PATH config
 export PATH="/usr/bin/"
