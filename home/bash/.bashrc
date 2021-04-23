@@ -23,7 +23,8 @@ PATH="$PATH:$HOME/.bin/"
 
 # Custom environments
 PATH="$PATH:$HOME/envs/perl/"
-PATH="$PATH:$HOME/envs/conda/bin"
+PATH="$PATH:$HOME/envs/conda/bin/"
+PATH="$PATH:$HOME/envs/haxe/"
 
 # CUDA
 PATH="$PATH:/opt/cuda/bin"
