@@ -1,5 +1,7 @@
+# Ignore files produced by templates
 home/caprine
-
-home/ssh/.ssh/keys
-
-home/x/xcolors
+home/themes/.themes/FlatColor/gtk-2.0/gtkrc
+home/themes/.themes/FlatColor/gtk-3.0/gtk.css
+home/themes/.themes/FlatColor/gtk-3.20/gtk.css
+home/x/.Xresources.d/xcolors
+home/rofi/.config/rofi/config.rasi
